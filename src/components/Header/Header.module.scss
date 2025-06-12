@@ -1,0 +1,120 @@
+.header {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+
+  .topBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: white;
+    flex-wrap: wrap; // ✅ 모바일 줄바꿈 대응
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .menuBtn {
+      display: block;
+      background: none;
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+
+      @media (max-width: 768px) {
+        display: none !important;
+      }
+    }
+
+    .searchWrapper {
+      width: 100%;
+      margin-top: 10px;
+
+      @media (min-width: 769px) {
+        width: auto;
+        margin-top: 0;
+      }
+    }
+
+    .search {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+
+      @media (min-width: 769px) {
+        width: 300px;
+        margin-left: 16px;
+      }
+    }
+
+    .right {
+      display: flex;
+
+      button {
+        margin-left: 10px;
+
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+    }
+
+    .mobileIcons {
+      display: none;
+
+      @media (max-width: 768px) {
+        display: flex;
+        gap: 12px;
+        margin-left: auto;
+
+        .iconBtn {
+          font-size: 20px;
+          text-decoration: none;
+          color: #333;
+        }
+      }
+    }
+  }
+
+  .categoryMenu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 240px;
+    background: #fff;
+    border-right: 1px solid #ddd;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+
+    ul > li {
+      position: relative;
+
+      span {
+        display: block;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      .submenu {
+        display: none;
+        padding-left: 10px;
+
+        li {
+          font-size: 14px;
+          padding: 6px 10px;
+        }
+      }
+
+      &:hover .submenu {
+        display: block;
+      }
+    }
+
+    &.open {
+      display: block;
+    }
+  }
+}
